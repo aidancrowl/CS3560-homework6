@@ -1,3 +1,12 @@
+/**
+* @file colors.h
+*
+* @brief This is the header file for the colors class
+* 
+* @author Matthew Beldyk
+*/
+
+
 //***********************************************************
 //
 //  File:     colors.h

@@ -1,3 +1,11 @@
+/**
+* @file main.cc
+*
+* @brief This is the main file that runs the game
+*
+* @author Brock Ferrell
+*/
+
 // Brock Ferrell
 // CS2401
 // November 23, 2015

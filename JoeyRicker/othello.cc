@@ -1,3 +1,13 @@
+/**
+* @file othello.cc
+*
+* @brief this is the source file for the othello class
+* This is where all functions are implemented to make the board
+* and establish the rules of the game
+*
+* @author Brock Ferrell
+*/
+
 // Brock Ferrell
 // CS2401
 // November 23, 2015
@@ -7,6 +17,16 @@
 
 namespace main_savitch_14
 {
+
+/**
+* @brief This function displays the othello board
+* This is done using characters that are displayed to the terminal
+* as well as the colors class
+*
+* @param There are no parameters to this function
+*
+* @return This function is a void function, so it has no return value
+*/
 
 void Othello::display_status()const
 {

@@ -1,4 +1,12 @@
-// File: game.cxx
+/**
+* @file game.cc
+*
+* @brief This file is the source file for the game class
+* There are multiple functions designed to make a terminal game playable
+* This game will be designed to have a player play against an intelligent computer player
+*
+* @author Brock Ferrell
+*/
 
 #include <cassert>    // Provides assert
 #include <climits>    // Provides INT_MAX and INT_MIN
@@ -16,6 +24,18 @@ namespace main_savitch_14
 
 //*************************************************************************
 // PUBLIC MEMBER FUNCTIONS
+
+/**
+* @brief This function is the main function that allows for the game to be played.
+* It starts by restarting the game to ensure a new game is being played
+* It continues to loop and play while the game is not over, starting with the 
+* human player, then the computer, displaying the board and finding the next turn
+* after each move. This is repeated until the game is over.
+*
+* @param There are no parameters for this function
+*
+* @return The winner of the game is returned
+*/
 
 game::who game::play( )
 // The play function should not be overridden. It plays one round of the
@@ -45,10 +65,31 @@ game::who game::play( )
 //*************************************************************************
 // OPTIONAL VIRTUAL FUNCTIONS (overriding these functions is optional)
 
+
+/**
+* @brief This function displays a message provided by the another part of the program
+* It is a constant function, so it won't modify the object that it calls
+*
+* @param The parameter is a constant string, const string& message, which allows the message to be passed through
+*
+* @return Since this is a void function, there is no return value
+*/
+
 void game::display_message(const string& message) const
 {
 	cout << message;
 }
+
+
+/**
+* @brief This function promts the user to enter a move into the keyboard.
+* It will store that move as a string 
+*
+* @param There are no parameters to this function
+*
+* @return The string named answer is returned, which stores the user's move
+* that they typed on the keyboard
+*/
 
 string game::get_user_move( ) const
 {
@@ -76,6 +117,24 @@ game::who game::winning()const {
 
 //*************************************************************************
 // PRIVATE FUNCTIONS (these are the same for every game)
+
+/**
+* @brief This function is the method used to generate the 
+* intelligent computer move. In a queue of strings, all of
+* the possible moves the computer is able to make.
+* All of these moves are evaluated, and a value is given to them
+* based on how the board will end up at the end of the move. 
+* Whatever the most favorable board based on the rules of the game is,
+* that is what move the computer will make
+*
+* @param int look_ahead - represents the number of moves ahead that the 
+* algorith should use when calculating the best move. This is defined in 
+* another part of the program
+* int beat_this - value of another move that is being considered
+* 
+* @return -best_value - this is the computer's best possible move
+* It is negative because the move is made from the human's perspective
+*/
 
 int game::eval_with_lookahead(int look_ahead, int beat_this)
 // Evaluate a board position with lookahead.
@@ -125,6 +184,16 @@ int game::eval_with_lookahead(int look_ahead, int beat_this)
 	return -best_value;
 }
 
+
+/**
+* @brief This function makes the computer move using a queue of strings
+* It creates a new game where future moves can be made and evaluated,
+* where the best move will eventually be executed.
+* 
+* @param This function has no parameters
+*
+* @return This function is a void function, so it has no return value
+*/
 void game::make_computer_move( )
 {
 	queue<string> moves;
@@ -157,6 +226,17 @@ void game::make_computer_move( )
 	// Make the best move.
 	make_move(best_move);
 }
+
+/**
+* @brief This function makes the game move for the human.
+* It calls the function get_user_move in order to get the 
+* human move from the keyboard, as well as checks if its a legal move
+* If it is a legal move, the move is brought the make_move function
+*
+* @param There are no parameters to this function
+*
+* @return This is a void function so it has no return value
+*/
 
 void game::make_human_move( ) {
 	string move;

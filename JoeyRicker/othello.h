@@ -1,3 +1,11 @@
+/**
+* @file othello.h
+*
+* @brief This is the header file for the othello class
+*
+* @author Brock Ferrell
+*/
+
 // Brock Ferrell
 // CS2401
 // November 23, 2015
