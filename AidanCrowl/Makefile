@@ -1,12 +1,9 @@
-all: build archive
+all: build doc
 
 build: game main.o game.o othello.o
 
-archive: archive.tar
-
-archive.tar: 
-	tar cvf archive.tar .
-	gzip archive.tar
+doc: 
+	doxygen config-file.conf
 
 game: game.o main.o othello.o
 	g++ -Wall game.o main.o othello.o -o game 
@@ -21,4 +18,5 @@ othello.o: othello.cc othello.h piece.h
 	g++ -c othello.cc
 
 clean:
-	rm *.o game archive.tar.gz
+	rm *.o game
+	rm -r html latex

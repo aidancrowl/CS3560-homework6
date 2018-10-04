@@ -1,21 +1,8 @@
-//***********************************************************
-//
-//  File:     colors.h
-//
-//  Author:   Matthew Beldyk
-//  Email:    mb245002@ohiou.edu
-//
-//  Usage:    I created this file to house some names string
-//            constants with escape codes for colors in them
-//            this makes it much easier for me to do colors.
-//            I can still use the codes if I want, but this
-//            works too.  try the statement:
-//            cout<<BLUE<<"I like cookies"<<endl;
-//
-//		  You may use this whereever you want, but if you
-//		  make any large improvements or whatever, I am
-//		  curious, so email 'em my way, please.
-//
+/**
+* @file colors.h
+* @brief Houses some names of string constants with escape codes for colors in them
+* @author Matthew Beldyk
+*/
 //***********************************************************
 //
 //  all credit given to Matthew Beldyk for writing this file

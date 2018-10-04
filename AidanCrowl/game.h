@@ -1,4 +1,9 @@
-// File: game.h (part of the namespace main_savitch_14)
+/**
+* @file game.h
+* @brief Defines game class
+* @author Matthew Beldyk
+*/
+
 
 
 #ifndef MAIN_SAVITCH_GAME

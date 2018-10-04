@@ -1,4 +1,9 @@
-// File: game.cxx
+/**
+* @file game.cc
+* @brief Defines and implements functions needed to play a game
+* @author Matthew Beldyk
+*/
+
 
 #include <cassert>    // Provides assert
 #include <climits>    // Provides INT_MAX and INT_MIN
@@ -16,6 +21,12 @@ namespace main_savitch_14
 
 //*************************************************************************
 // PUBLIC MEMBER FUNCTIONS
+
+/**
+* @brief Plays one round of the game with human player moving first and computer second
+* @param none
+* @return HUMAN (a game object)
+*/
 
 game::who game::play( )
 // The play function should not be overridden. It plays one round of the
@@ -45,10 +56,22 @@ game::who game::play( )
 //*************************************************************************
 // OPTIONAL VIRTUAL FUNCTIONS (overriding these functions is optional)
 
+/**
+* @brief Prints the specified message to the terminal
+* @param const string& message (a string variable)
+* @return void
+*/
+
 void game::display_message(const string& message) const
 {
 	cout << message;
 }
+
+/**
+* @brief Gets user move
+* @param none
+* @return answer (input string variable)
+*/
 
 string game::get_user_move( ) const
 {
@@ -59,6 +82,12 @@ string game::get_user_move( ) const
 	getline(cin, answer);
 	return answer;
 }
+
+/**
+* @brief Determines which player is winning the current game
+* @param none
+* @return HUMAN, COMPUTER, or NEUTRAL (game objects depending on what the function determines)
+*/
 
 game::who game::winning()const {
 
@@ -76,6 +105,13 @@ game::who game::winning()const {
 
 //*************************************************************************
 // PRIVATE FUNCTIONS (these are the same for every game)
+
+/**
+* @brief Evaluates a board position with lookahead
+* @param look_ahead (int variable that determines how deep the lookahead should go to evaluate the move)
+* @param beat_this (int variable that represents the value of another move that function is considering)
+* @return Returns an integer value that indicates the strength of the position of the player who just moved
+*/
 
 int game::eval_with_lookahead(int look_ahead, int beat_this)
 // Evaluate a board position with lookahead.
@@ -125,6 +161,12 @@ int game::eval_with_lookahead(int look_ahead, int beat_this)
 	return -best_value;
 }
 
+/**
+* @brief Makes a move for the computer
+* @param none
+* @return void
+*/
+
 void game::make_computer_move( )
 {
 	queue<string> moves;
@@ -157,6 +199,12 @@ void game::make_computer_move( )
 	// Make the best move.
 	make_move(best_move);
 }
+
+/**
+* @brief Allows human player to make a move
+* @param none
+* @return void
+*/
 
 void game::make_human_move( ) {
 	string move;

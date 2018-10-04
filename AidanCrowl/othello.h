@@ -1,7 +1,8 @@
-// Brock Ferrell
-// CS2401
-// November 23, 2015
-// Project7
+/**
+* @file othello.h
+* @brief Defines othello class
+* @author Brock Ferrell
+*/
 
 #ifndef OTHELLO_H
 #define OTHELLO_H
