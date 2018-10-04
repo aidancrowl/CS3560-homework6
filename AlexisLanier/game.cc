@@ -1,4 +1,8 @@
-// File: game.cxx
+/**
+*@file game.cc
+*@brief Implements functions from the game class needed to play othello
+*@author Brock Ferrell
+*/
 
 #include <cassert>    // Provides assert
 #include <climits>    // Provides INT_MAX and INT_MIN
@@ -16,6 +20,12 @@ namespace main_savitch_14
 
 //*************************************************************************
 // PUBLIC MEMBER FUNCTIONS
+
+/**
+*@brief plays one round of the game where the human plays first followed by the computer
+*@param none
+*@return HUMAN (a game object)
+*/
 
 game::who game::play( )
 // The play function should not be overridden. It plays one round of the
@@ -45,10 +55,23 @@ game::who game::play( )
 //*************************************************************************
 // OPTIONAL VIRTUAL FUNCTIONS (overriding these functions is optional)
 
+
+/**
+*@brief displays message that is passed into function
+*@param const string& message
+*@return void
+*/
+
 void game::display_message(const string& message) const
 {
 	cout << message;
 }
+
+/**
+*@brief prints a message telling the user to move then gets the user's next move
+*@param none
+*@return string answer (the user's next move)
+*/
 
 string game::get_user_move( ) const
 {
@@ -59,6 +82,12 @@ string game::get_user_move( ) const
 	getline(cin, answer);
 	return answer;
 }
+
+/**
+*@brief returns who is currently winning the game
+*@param none
+*@return last_mover, next_mover (HUMAN, COMPUTER, or NEUTRAL)
+*/
 
 game::who game::winning()const {
 
@@ -76,6 +105,13 @@ game::who game::winning()const {
 
 //*************************************************************************
 // PRIVATE FUNCTIONS (these are the same for every game)
+
+/**
+*@brief evaluates the board with the ability to look ahead
+*@param int look_ahead (integer value of how far ahead the lookahead should look
+*@param int beat_this (integer value of a move that is being considered by the function
+*@return -best_value (integer value that indicates the strength of the position for the player who just moved)
+*/
 
 int game::eval_with_lookahead(int look_ahead, int beat_this)
 // Evaluate a board position with lookahead.
@@ -125,6 +161,12 @@ int game::eval_with_lookahead(int look_ahead, int beat_this)
 	return -best_value;
 }
 
+/**
+*@brief computer makes a move based on all of the possible moves and the best move
+*@param none
+*@return void
+*/
+
 void game::make_computer_move( )
 {
 	queue<string> moves;
@@ -157,6 +199,12 @@ void game::make_computer_move( )
 	// Make the best move.
 	make_move(best_move);
 }
+
+/**
+*@brief human makes a move based on the move the user inputs
+*@param none
+*@return void
+*/
 
 void game::make_human_move( ) {
 	string move;

@@ -1,3 +1,10 @@
+/**
+*@file piece.h
+*@brief header file for piece class with function definitions
+*@author Brock Ferrell
+*/
+
+
 // Brock Ferrell
 // CS2401
 // November 23, 2015
@@ -24,6 +31,12 @@ public:
 	bool is_blank()const {return theColor == blank;}
 	bool is_black()const {return theColor == black;}
 	bool is_white()const {return theColor == white;}
+	
+/**
+*@brief sets a piece to the color white
+*@param none
+*@return void
+*/
 	void set_white() {theColor = white;}
 	void set_black() {theColor = black;}
 

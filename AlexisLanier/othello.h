@@ -1,3 +1,10 @@
+/**
+*@file othello.h
+*@brief creates othello class and function definitions
+*@author Brock Ferrell
+*/
+
+
 // Brock Ferrell
 // CS2401
 // November 23, 2015

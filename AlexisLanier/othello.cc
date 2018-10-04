@@ -1,3 +1,10 @@
+/**
+*@file othello.cc
+*@brief implements functions from othello class to create game
+*@author Brock Ferrell
+*/
+
+
 // Brock Ferrell
 // CS2401
 // November 23, 2015
@@ -189,6 +196,11 @@ void Othello::make_move(const string& move) {
   move_number++;
 }
 
+/**
+*@brief restarts the game to beginning positions
+*@param none
+*@return void
+*/
 
 void Othello::restart() {
 

@@ -1,9 +1,12 @@
 #Makefile for CS3560 Hw 5
 #Alexis Lanier
 
-all: game build archive
+all: build doc
 
 build: game
+
+doc: 
+	doxygen Doxyfile
 
 game: main.o game.o othello.o
 	g++ -o game main.cc game.cc othello.cc
@@ -17,8 +20,6 @@ game.o: game.cc game.h
 othello.o: othello.cc othello.h game.h piece.h colors.h
 	g++ -c othello.cc
 
-archive: colors.h game.cc game.h main.cc othello.cc othello.h piece.h makefile
-	tar cvzf cs3560hw.tar.gz /home/alexis/cs3560hw
-
 clean: 
 	rm main.o game.o othello.o game
+	rm -r html latex
