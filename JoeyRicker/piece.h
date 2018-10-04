@@ -1,8 +1,7 @@
-/**
-* @file piece.h
-* @brief Defines piece class and implements all functions
-* @author Brock Ferrell
-*/
+// Brock Ferrell
+// CS2401
+// November 23, 2015
+// Project7
 
 #ifndef PIECE_H
 #define PIECE_H
@@ -12,11 +11,6 @@ class piece {
 public:
 	piece() {theColor = blank;}
 
-/**
-* @brief Changes a piece to the opposite color (white to black, black to white)
-* @param none
-* @return void
-*/
 	void flip()
 	{
 		if (theColor == white) {

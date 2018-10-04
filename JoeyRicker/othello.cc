@@ -1,8 +1,7 @@
-/**
-* @file othello.cc
-* @brief Defines and implements functions that govern a game of othello
-* @author Brock Ferrell
-*/
+// Brock Ferrell
+// CS2401
+// November 23, 2015
+// Project7
 
 #include "othello.h"
 
@@ -48,12 +47,6 @@ void Othello::display_status()const
   }
   cout << "\nEnter a move in the format(letter,number) (Ex: A3)" << endl;
 }
-
-/**
-* @brief Makes the specified move
-* @param const string& move (a string variable containing the desired move)
-* @return void
-*/
 
 void Othello::make_move(const string& move) {
 
